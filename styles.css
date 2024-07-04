@@ -370,6 +370,10 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
 }
 
+.app_button-edit > img{
+    min-width: 30px;
+}
+
 .app__section-active-task-label {
     font-family: Montserrat;
     font-size: 1.25rem;
@@ -418,6 +422,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .app__section-task-list-item-complete .app__section-task-icon-status circle {
     fill: #00F4BF;
+}
+
+.app__section-task-icon-status{
+    min-width: 24px;
+    min-height: 24px;
 }
 
 .app__form-add-task {
