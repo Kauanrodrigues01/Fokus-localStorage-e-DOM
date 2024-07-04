@@ -44,7 +44,7 @@ const carregarTarefas = () => {
         const botao = document.createElement('button')
         botao.classList.add('app_button-edit')
         const imagemBt = document.createElement('img')
-        imagemBt.setAttribute('src', 'imagens/edit.png')
+        imagemBt.setAttribute('src', './imagens/edit.png')
         botao.appendChild(imagemBt)
 
         li.appendChild(svg)

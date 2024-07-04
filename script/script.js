@@ -12,14 +12,14 @@ const titulo = document.querySelector('.app__title')
 
 // audios
 const musicaFocoInput = document.querySelector('#alternar-musica')
-const musica = new Audio('/sons/luna-rise-part-one.mp3')
+const musica = new Audio('./sons/luna-rise-part-one.mp3')
 musica.loop = true
 
 //cronômetro
 const startPauseBt = document.querySelector('#start-pause')
-const audioPlay = new Audio('/sons/play.wav')
-const audioPausa = new Audio('/sons/pause.mp3')
-const audioBeep = new Audio('/sons/beep.mp3')
+const audioPlay = new Audio('./sons/play.wav')
+const audioPausa = new Audio('./sons/pause.mp3')
+const audioBeep = new Audio('./sons/beep.mp3')
 const imgBtComecar = startPauseBt.children[0]
 const ComecarPausarBt = startPauseBt.children[1]
 const tempoNaTela = document.querySelector('#timer')
@@ -36,7 +36,7 @@ musicaFocoInput.addEventListener('change', ()=>{
 })
 
 focoBt.addEventListener('click', () => {
-    imgBtComecar.setAttribute('src', '/imagens/play_arrow.png')
+    imgBtComecar.setAttribute('src', './imagens/play_arrow.png')
     ComecarPausarBt.textContent = 'Começar'
     pausar()
     tempoDecorridoEmSegundos = 1500
@@ -44,7 +44,7 @@ focoBt.addEventListener('click', () => {
 })
 
 curtoBt.addEventListener('click', () => {
-    imgBtComecar.setAttribute('src', '/imagens/play_arrow.png')
+    imgBtComecar.setAttribute('src', './imagens/play_arrow.png')
     ComecarPausarBt.textContent = 'Começar'
     pausar()
     tempoDecorridoEmSegundos = 300
@@ -52,7 +52,7 @@ curtoBt.addEventListener('click', () => {
 })
 
 longoBt.addEventListener('click', () => {
-    imgBtComecar.setAttribute('src', '/imagens/play_arrow.png')
+    imgBtComecar.setAttribute('src', './imagens/play_arrow.png')
     ComecarPausarBt.textContent = 'Começar'
     pausar()
     tempoDecorridoEmSegundos = 900
@@ -63,7 +63,7 @@ longoBt.addEventListener('click', () => {
 const alterarModoDeTempo = (contexto, el, temporizador) => {
     mostrarTempo()
     html.setAttribute('data-contexto', contexto)
-    banner.setAttribute('src', `/imagens/${contexto}.png`)
+    banner.setAttribute('src', `./imagens/${contexto}.png`)
 
     focoBt.classList.remove('active')
     curtoBt.classList.remove('active')
@@ -111,13 +111,13 @@ const iniciarOuPausar = () => {
     if(intervaloId){
         audioPausa.play()
         pausar()
-        imgBtComecar.setAttribute('src', '/imagens/play_arrow.png')
+        imgBtComecar.setAttribute('src', './imagens/play_arrow.png')
         ComecarPausarBt.textContent = 'Começar'
         return
     }
     audioPlay.play()
     intervaloId = setInterval(contagemRegressiva, 1000)
-    imgBtComecar.setAttribute('src', '/imagens/pause.png')
+    imgBtComecar.setAttribute('src', './imagens/pause.png')
     ComecarPausarBt.textContent = 'Pausar'
 }
 
