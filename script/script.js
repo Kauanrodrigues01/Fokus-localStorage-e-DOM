@@ -28,7 +28,7 @@ let intervaloId = null
 
 musicaFocoInput.addEventListener('change', ()=>{
     if (musica.paused){
-        musica.currentTime = 15
+        musica.currentTime = 1500
         musica.play()
     } else{
         musica.pause()
@@ -39,7 +39,7 @@ focoBt.addEventListener('click', () => {
     imgBtComecar.setAttribute('src', './imagens/play_arrow.png')
     ComecarPausarBt.textContent = 'Começar'
     pausar()
-    tempoDecorridoEmSegundos = 5
+    tempoDecorridoEmSegundos = 300
     alterarModoDeTempo('foco',  focoBt)
 })
 
@@ -47,7 +47,7 @@ curtoBt.addEventListener('click', () => {
     imgBtComecar.setAttribute('src', './imagens/play_arrow.png')
     ComecarPausarBt.textContent = 'Começar'
     pausar()
-    tempoDecorridoEmSegundos = 5
+    tempoDecorridoEmSegundos = 900
     alterarModoDeTempo('descanso-curto', curtoBt)
 })
 
