@@ -15,38 +15,10 @@ const atualizarTarefas = () => {
     localStorage.setItem('tarefas', JSON.stringify(tarefas))
 }
 
-btnAdicionarTarefa.addEventListener('click', () => {
-    formAdicionarTarefa.classList.toggle('hidden')
-    console.log('clicou')
-})
-
-formAdicionarTarefa.addEventListener('submit', (evt) => {
-    evt.preventDefault()
-    if (textarea.value.length < 5){
-        alert('A descrição da tarefa tem que ter no mínimo 5 caracteres')
-    } else{
-        const tarefa = {
-            descricao: textarea.value
-        }
-        tarefas.push(tarefa)
-        atualizarTarefas()
-        textarea.value = ''
-        formAdicionarTarefa.classList.add('hidden')
-        carregarTarefas() // Após adicionar uma tarefa, carrega novamente a lista de tarefas
-    }
-    
-})
-
-bntLimparTarefas.addEventListener('click', () => {
-    limparTodasTarefas()   
-})
-
-bntLimparTarefasConcluidas.addEventListener('click', () => {
-    limparTarefasConcluidas();   
-})
-
 const carregarTarefas = () => {
+    // debugger
     containerTarefas.innerHTML = '' // Limpa o conteúdo anterior da lista de tarefas
+    paragrafoTarefaEmAndamento.textContent = ''
     tarefas.forEach((tarefa) => {
         const li = document.createElement('li')
         li.classList.add('app__section-task-list-item')
@@ -97,14 +69,13 @@ const carregarTarefas = () => {
         else{
             li.onclick = () => {
                 // debugger
-
                 const lis = [...containerTarefas.children]
                 lis.forEach((el) => {
                     el.classList.remove('app__section-task-list-item-active')
                 })
 
 
-                if(tarefaSelecionada == tarefa){
+                if (tarefaSelecionada && tarefaSelecionada[0] == tarefa) {
                     paragrafoTarefaEmAndamento.textContent = ''
                     tarefaSelecionada = null
                     return
@@ -116,13 +87,51 @@ const carregarTarefas = () => {
             }
         }
         
-
         containerTarefas.appendChild(li) // Adiciona o item na lista HTML
     })
 }
 
-// Carrega as tarefas ao iniciar o script
-carregarTarefas()
+const limparTodasTarefas = () => {
+    tarefas = []
+    atualizarTarefas()
+    carregarTarefas()
+}
+
+const limparTarefasConcluidas = () => {
+    tarefas = tarefas.filter((tarefa) => !tarefa.concluida)
+    atualizarTarefas()
+    carregarTarefas()
+}
+
+btnAdicionarTarefa.addEventListener('click', () => {
+    formAdicionarTarefa.classList.toggle('hidden')
+    console.log('clicou')
+})
+
+formAdicionarTarefa.addEventListener('submit', (evt) => {
+    evt.preventDefault()
+    if (textarea.value.length < 5){
+        alert('A descrição da tarefa tem que ter no mínimo 5 caracteres')
+    } else{
+        const tarefa = {
+            descricao: textarea.value
+        }
+        tarefas.push(tarefa)
+        atualizarTarefas()
+        textarea.value = ''
+        formAdicionarTarefa.classList.add('hidden')
+        carregarTarefas() // Após adicionar uma tarefa, carrega novamente a lista de tarefas
+    }
+    
+})
+
+bntLimparTarefas.addEventListener('click', () => {
+    limparTodasTarefas()
+})
+
+bntLimparTarefasConcluidas.addEventListener('click', () => {
+    limparTarefasConcluidas();   
+})
 
 document.addEventListener('FocoFinalizado', () => {
     // console.log(tarefaSelecionada[0])
@@ -137,14 +146,5 @@ document.addEventListener('FocoFinalizado', () => {
     }
 })
 
-const limparTodasTarefas = () => {
-    tarefas = []
-    atualizarTarefas()
-    carregarTarefas()
-}
-
-const limparTarefasConcluidas = () => {
-    tarefas = tarefas.filter((tarefa) => !tarefa.concluida)
-    atualizarTarefas()
-    carregarTarefas()
-}
+// Carrega as tarefas ao iniciar o script
+carregarTarefas()

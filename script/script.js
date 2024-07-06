@@ -18,46 +18,13 @@ musica.loop = true
 //cronômetro
 const startPauseBt = document.querySelector('#start-pause')
 const audioPlay = new Audio('./sons/play.wav')
-const audioPausa = new Audio('./sons/pause.mp3')
+const audioPausa = new Audio('./sons/play.mp4')
 const audioTempoFinalizado = new Audio('./sons/beep.mp3')
 const imgBtComecar = startPauseBt.children[0]
 const ComecarPausarBt = startPauseBt.children[1]
 const tempoNaTela = document.querySelector('#timer')
 let tempoDecorridoEmSegundos = 1500
 let intervaloId = null
-
-musicaFocoInput.addEventListener('change', ()=>{
-    if (musica.paused){
-        musica.currentTime = 15
-        musica.play()
-    } else{
-        musica.pause()
-    }
-})
-
-focoBt.addEventListener('click', () => {
-    imgBtComecar.setAttribute('src', './imagens/play_arrow.png')
-    ComecarPausarBt.textContent = 'Começar'
-    pausar()
-    tempoDecorridoEmSegundos = 1500
-    alterarModoDeTempo('foco',  focoBt)
-})
-
-curtoBt.addEventListener('click', () => {
-    imgBtComecar.setAttribute('src', './imagens/play_arrow.png')
-    ComecarPausarBt.textContent = 'Começar'
-    pausar()
-    tempoDecorridoEmSegundos = 300
-    alterarModoDeTempo('descanso-curto', curtoBt)
-})
-
-longoBt.addEventListener('click', () => {
-    imgBtComecar.setAttribute('src', './imagens/play_arrow.png')
-    ComecarPausarBt.textContent = 'Começar'
-    pausar()
-    tempoDecorridoEmSegundos = 900
-    alterarModoDeTempo('descanso-longo', longoBt)
-})
 
 // Função para alternar o modo de descanso
 const alterarModoDeTempo = (contexto, el) => {
@@ -153,6 +120,38 @@ const mostrarTempo = () => {
     tempoNaTela.innerHTML = `${tempoFormatado}`
 }
 
-mostrarTempo()
+musicaFocoInput.addEventListener('change', ()=>{
+    if (musica.paused){
+        musica.currentTime = 15
+        musica.play()
+    } else{
+        musica.pause()
+    }
+})
 
+focoBt.addEventListener('click', () => {
+    imgBtComecar.setAttribute('src', './imagens/play_arrow.png')
+    ComecarPausarBt.textContent = 'Começar'
+    pausar()
+    tempoDecorridoEmSegundos = 1500
+    alterarModoDeTempo('foco',  focoBt)
+})
+
+curtoBt.addEventListener('click', () => {
+    imgBtComecar.setAttribute('src', './imagens/play_arrow.png')
+    ComecarPausarBt.textContent = 'Começar'
+    pausar()
+    tempoDecorridoEmSegundos = 300
+    alterarModoDeTempo('descanso-curto', curtoBt)
+})
+
+longoBt.addEventListener('click', () => {
+    imgBtComecar.setAttribute('src', './imagens/play_arrow.png')
+    ComecarPausarBt.textContent = 'Começar'
+    pausar()
+    tempoDecorridoEmSegundos = 900
+    alterarModoDeTempo('descanso-longo', longoBt)
+})
+
+mostrarTempo()
 startPauseBt.addEventListener('click', iniciarOuPausar)
