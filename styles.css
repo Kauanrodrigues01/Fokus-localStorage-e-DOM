@@ -361,7 +361,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .app_button-edit,
-.app_button-more {
+.app_button-more{
     border: none;
     cursor: pointer;
     outline: inherit;
@@ -372,6 +372,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .app_button-edit > img{
     min-width: 30px;
+}
+
+.app__button-delete{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.app__button-delete > img{
+    max-width: 22px;
 }
 
 .app__section-active-task-label {

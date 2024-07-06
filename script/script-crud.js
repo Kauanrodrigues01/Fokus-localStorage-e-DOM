@@ -32,14 +32,40 @@ const carregarTarefas = () => {
                 fill="#01080E"></path>
             </svg>
         `
+        // criando paragrafo para a descrição da tarefa
         const paragrafo = document.createElement('p')
         paragrafo.classList.add('app__section-task-list-item-description')
         paragrafo.textContent = tarefa.descricao
 
-        const botao = document.createElement('button')
-        botao.classList.add('app_button-edit')
+        // criando botão de editar
+        const botaoEdit = document.createElement('button')
+        botaoEdit.classList.add('app_button-edit')
 
-        botao.onclick = () => {
+        // criando botão de deletar
+        const botaoDeletar = document.createElement('button')
+        botaoDeletar.classList.add('app__button-delete')
+
+        // criando e adicionando a imagem edit para o botão de editar
+        const imagemBtEdit = document.createElement('img')
+        imagemBtEdit.setAttribute('src', './imagens/edit.png')
+        botaoEdit.appendChild(imagemBtEdit)
+
+        // criando e adicionando a imagem lixeira para o botão de deletar
+        const imgBtDeletar = document.createElement('img')
+        imgBtDeletar.setAttribute('src', './imagens/lixeira.png')
+        botaoDeletar.appendChild(imgBtDeletar)
+
+        // criando e estilizando div para os botões
+        const divBotoes = document.createElement('div')
+        divBotoes.style.display = 'inline-flex'
+        divBotoes.style.gap = '0.5rem'
+
+        // adicionando os botões dentro da div
+        divBotoes.appendChild(botaoEdit)
+        divBotoes.appendChild(botaoDeletar)
+
+        // função de editar a descrição da tarefa quando clicar no botão de editar
+        botaoEdit.onclick = () => {
             // debugger
             const novaDescricao= prompt('Qual é o novo nome da tarefa?')
             if (novaDescricao == null){
@@ -54,17 +80,21 @@ const carregarTarefas = () => {
             }
         }
 
-        const imagemBt = document.createElement('img')
-        imagemBt.setAttribute('src', './imagens/edit.png')
-        botao.appendChild(imagemBt)
+        // função de deletar tarefa quando clicar no botão de deletar
+        botaoDeletar.onclick = () => {
+            li.remove()
+            tarefas = tarefas.filter(tarefafilter => tarefafilter != tarefa)
+            atualizarTarefas()
+        }
 
         li.appendChild(svg)
         li.appendChild(paragrafo)
-        li.appendChild(botao)
+        li.appendChild(divBotoes)
 
+        // Se a tarefa tiver concluida ele adiciona a classe de tarefas concluidas. Caso contrário ele tem o comportamento normal das li das tarefas
         if (tarefa.concluida){
             li.classList.add('app__section-task-list-item-complete')
-            botao.setAttribute('disabled', true)
+            botaoEdit.setAttribute('disabled', true)
         }
         else{
             li.onclick = () => {
