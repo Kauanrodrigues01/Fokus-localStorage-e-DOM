@@ -18,7 +18,7 @@ musica.loop = true
 //cronômetro
 const startPauseBt = document.querySelector('#start-pause')
 const audioPlay = new Audio('./sons/play.wav')
-const audioPausa = new Audio('./sons/play.mp4')
+const audioPausa = new Audio('./sons/pause.mp4')
 const audioTempoFinalizado = new Audio('./sons/beep.mp3')
 const imgBtComecar = startPauseBt.children[0]
 const ComecarPausarBt = startPauseBt.children[1]
