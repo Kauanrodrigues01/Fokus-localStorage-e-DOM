@@ -6,6 +6,17 @@ const paragrafoTarefaEmAndamento = document.querySelector('.app__section-active-
 const dropdownMenuOpcoes = document.querySelector('.app__section-task-header__ul')
 const bntLimparTarefasConcluidas = dropdownMenuOpcoes.children[0]
 const bntLimparTarefas = dropdownMenuOpcoes.children[1]
+const bntCancelarAdicionarTarefa = document.querySelector('.app__form-footer__button--cancel')
+const bntDeletarConteudoTextarea = document.querySelector('.app__form-footer__button--delete')
+
+bntCancelarAdicionarTarefa.addEventListener('click', () => {
+    textarea.value = ''
+    formAdicionarTarefa.classList.toggle('hidden')
+})
+
+bntDeletarConteudoTextarea.addEventListener('click', () => {
+    textarea.value = ''
+})
 
 // Pegando informações da localStore
 let tarefas = JSON.parse(localStorage.getItem('tarefas')) || []
@@ -136,7 +147,6 @@ const limparTarefasConcluidas = () => {
 
 btnAdicionarTarefa.addEventListener('click', () => {
     formAdicionarTarefa.classList.toggle('hidden')
-    console.log('clicou')
 })
 
 formAdicionarTarefa.addEventListener('submit', (evt) => {
