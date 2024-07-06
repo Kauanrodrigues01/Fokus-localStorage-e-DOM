@@ -58,6 +58,7 @@ const carregarTarefas = () => {
         // criando e estilizando div para os botões
         const divBotoes = document.createElement('div')
         divBotoes.style.display = 'inline-flex'
+        divBotoes.style.alignItems = 'center'
         divBotoes.style.gap = '0.5rem'
 
         // adicionando os botões dentro da div
