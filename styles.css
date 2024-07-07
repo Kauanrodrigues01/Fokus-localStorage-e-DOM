@@ -478,8 +478,14 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 3.2rem;
 }
 
-.app__form-footer .splitter {
+.app__form-footer__button--microfone{
     flex-grow: 1;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    max-width: 20px;
+    margin-left: auto;
+    cursor: pointer;
 }
 
 .app__form-footer__button {
@@ -503,6 +509,9 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0.8rem 2.4rem;
     color: #fff;
     background: var(--azul-profundo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .app__button--add-task {
