@@ -583,6 +583,11 @@ h1, h2, h3, h4, h5, h6 {
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+}
+
+@media (max-width: 450px){
+    .app__form-footer__button--confirm{
         margin-left: auto;
     }
 }

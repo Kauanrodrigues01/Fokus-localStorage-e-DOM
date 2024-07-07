@@ -183,6 +183,13 @@ document.addEventListener('FocoFinalizado', () => {
         tarefaSelecionada[1].querySelector('button').setAttribute('disabled', true)
 
         tarefaSelecionada[0].concluida = true
+
+        navigator.vibrate(pattern);
+
+        setTimeout(() => {
+            navigator.vibrate(0); // Para a vibração
+        }, 1000)
+
         atualizarTarefas()
     }
 })
