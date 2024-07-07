@@ -184,11 +184,11 @@ document.addEventListener('FocoFinalizado', () => {
 
         tarefaSelecionada[0].concluida = true
 
-        navigator.vibrate(pattern);
+        navigator.vibrate(200);
 
         setTimeout(() => {
             navigator.vibrate(0); // Para a vibração
-        }, 1000)
+        }, 1000);
 
         atualizarTarefas()
     }
