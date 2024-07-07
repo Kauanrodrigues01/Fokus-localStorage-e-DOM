@@ -26,6 +26,7 @@ const tempoNaTela = document.querySelector('#timer')
 let tempoDecorridoEmSegundos = 1500
 let intervaloId = null
 
+
 // Função para alternar o modo de descanso
 const alterarModoDeTempo = (contexto, el) => {
     mostrarTempo()
