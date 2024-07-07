@@ -1,6 +1,6 @@
 # Fokus
 
-Foi um projeto desenvolvido durante o curso de JavaScript: explorando a manipulação de elementos e da localStorage. Durante o curso foram reforçados conceitos de manipulação de DOM e aprensetadado um novo conteúdo que o armazenamento na localStorage
+Foi um projeto desenvolvido durante o curso de JavaScript: explorando a manipulação de elementos e da localStorage. Durante o curso foram reforçados conceitos de manipulação de DOM e aprensetadado um novo conteúdo que o armazenamento na localStorage. E foram feitas melhorias usando a web speech API para reconhecimento de voz.
 
 ## Um pouco sobre o Projeto
 
@@ -16,6 +16,7 @@ Foi um projeto desenvolvido durante o curso de JavaScript: explorando a manipula
 3. Visualizar Tarefas: As tarefas adicionadas estão todas lá organizadas para o usuário vizualisar.
 4. Marcar Tarefas como Completas: Quando uma tarefa é finalizada, ela muda de aparência. É o CSS e JavaScript acontecendo.
 5. Remover Tarefas: Funcionalidade de remover apenas as tarefas completas ou apague tudo e comece de novo com uma lista de tarefas limpa.
+6. Adicionando Tarefas usando a voz: reconhecimento de voz usando a web speech API.
 
 ## Conceitos abordados durante o curso
 
