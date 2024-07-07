@@ -23,7 +23,7 @@ const audioTempoFinalizado = new Audio('./sons/beep.mp3')
 const imgBtComecar = startPauseBt.children[0]
 const ComecarPausarBt = startPauseBt.children[1]
 const tempoNaTela = document.querySelector('#timer')
-let tempoDecorridoEmSegundos = 5
+let tempoDecorridoEmSegundos = 1500
 let intervaloId = null
 
 // Função para alternar o modo de descanso
@@ -72,13 +72,13 @@ const contagemRegressiva = ()=>{
         ComecarPausarBt.textContent = 'Começar'
         // debugger
         if (html.dataset.contexto == 'foco'){
-            tempoDecorridoEmSegundos = 5
+            tempoDecorridoEmSegundos = 1500
             mostrarTempo()
         } else if (html.dataset.contexto == 'descanso-curto'){
-            tempoDecorridoEmSegundos = 3
+            tempoDecorridoEmSegundos = 300
             mostrarTempo()
         } else{
-            tempoDecorridoEmSegundos = 9
+            tempoDecorridoEmSegundos = 900
             mostrarTempo()
         }
 
