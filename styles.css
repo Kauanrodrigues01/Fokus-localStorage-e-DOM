@@ -277,33 +277,6 @@ h1, h2, h3, h4, h5, h6 {
 
 /* fim - dropdown */
 
-
-/* Para Tablets */
-@media (max-width: 1024px) and (min-width: 768px) {
-    .app__section-banner-container {
-        width: 48rem;
-    }
-}
-
-/* Para Celulares */
-@media (max-width: 767px) {
-    .app__section-banner-container {
-        width: 32rem;
-    }
-
-    .app__title {
-        font-size: 2.6rem;
-    }
-
-    .app__card-timer {
-        font-size: 6rem;
-    }
-
-    .app__section-active-task {
-        gap: 2rem;
-    }
-}
-
 .hidden {
     display: none;
 }
@@ -476,6 +449,7 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     gap: 1.6rem;
     margin-top: 3.2rem;
+    flex-wrap: wrap;
 }
 
 .app__form-footer__button--microfone{
@@ -564,4 +538,51 @@ h1, h2, h3, h4, h5, h6 {
 
 .app__footer-container-imgs-link-img:hover{
     filter: grayscale(0%);
+}
+
+
+/* Para Tablets */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .app__section-banner-container {
+        width: 48rem;
+    }
+}
+
+/* Para Celulares */
+@media (max-width: 767px) {
+    .app__section-banner-container {
+        width: 32rem;
+    }
+
+    .app__title {
+        font-size: 2.6rem;
+    }
+
+    .app__card-timer {
+        font-size: 6rem;
+    }
+
+    .app__section-active-task {
+        gap: 2rem;
+    }
+
+    .app__form-footer__button{
+        font-size: 1.5rem;
+        gap: 0.6rem;
+    }
+
+    .app__form-footer__button--microfone {
+        max-width: 15px;
+    }
+
+    .app__form-footer__button--confirm {
+        border-radius: 3.2rem;
+        padding: 0.5rem 1.5rem;
+        color: #fff;
+        background: var(--azul-profundo);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+    }
 }
